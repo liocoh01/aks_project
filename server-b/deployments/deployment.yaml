@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-b
+  labels:
+    app: server-b
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: server-b
+      labels:
+        app: server-b
+    spec:
+      containers:
+      - name: server-b
+        image: liorco.azurecr.io/server-b:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8005
+      nodeSelector:
+        "kubernetes.io/os": linux
+  selector:
+    matchLabels:
+      app: server-b

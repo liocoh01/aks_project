@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: server-b
+spec:
+  rules:
+    - host: server-b.liorco300.site
+      http:
+        paths:
+          - backend:
+              serviceName: server-b
+              servicePort: 8005
+            path: /

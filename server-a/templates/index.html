@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>WebSockets </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+       $(document).ready(function(){
+           var socket = io.connect('http://' + document.domain + ':' + location.port);
+           //listens to 'price update' message on socket
+           socket.on('price update', function(msg) {
+               $('#price_info').text(msg)
+           });
+           //listens to 'price update' message on socket
+           socket.on('price avg', function(msg) {
+               $('#price_avg').text(msg)
+           });
+
+       });
+   </script>
+</head>
+<body>
+  <div id="price_info"></div>
+  <div id="price_avg"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+aks-engine.exe
+aks-engine
+debug
+scripts/_output/
+_input/
+.vscode
+.DS_Store
+test/user.env
+user.env
+test/aks-engine-test/aks-engine-test
+.editorconfig
+_dist/
+bin/
+.env
+.coverprofile
+coverage.txt
+
+test/junit/
+test/e2e/kubernetes/junit.xml
+test/aks-engine-test/aks-engine-test.exe
+pkg/operations/junit.xml
+pkg/operations/kubernetesupgrade/junit.xml
+pkg/engine/templates.go
+pkg/i18n/translations.go
+
+_logs/
+test/aks-engine-test/report/TestReport.json
+*.swp
+
+# I have no idea why these get generated when I run the e2e test
+test/e2e/kubernetes/translations/
+
+# test outputs
+cmd/_test_output
+test/e2e/kubernetes/kubernetes.test
+*.test
+*.coverprofile
+
+# packer
+vhd/packer/settings.json
+vhd/packer/sp.json
+
+.idea
+.vs
+
+# exclude vendor directory from gitignore
+!/vendor/**/*
+!/test/e2e/vendor/**/*
+/venv/
